@@ -4,7 +4,7 @@ import ResetPassword from "./pages/auth/ResetPassword";
 import SendPasswordResetEmail from "./pages/auth/SendPasswordResetEmail";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
-import Home from "./pages/Home";
+import Home from "./pages/PopageNew";
 import Layout from "./pages/Layout";
 import { useSelector } from "react-redux";
 function App() {
@@ -14,9 +14,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+            <Route path="home" element={<Home />} />
+            {/* <Route path="crud" element={<Crud />} /> */}
             <Route path="contact" element={<Contact />} />
-            <Route path="login" element={!access_token ? <LoginReg /> : <Navigate to="/dashboard" />} />
+            {/* <Route path="popage" element={<Popage />} /> */}
+            <Route path="login" element={!access_token ? <LoginReg /> : <Navigate to="/dashboard" />} /> 
             <Route path="sendpasswordresetemail" element={<SendPasswordResetEmail />} />
             <Route path="api/user/reset/:id/:token" element={<ResetPassword />} />
           </Route>
