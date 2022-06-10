@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import CustomizedDialogs from './components/Polist';
+// import Polistpage from './components/AddCustomerPo'
+import AddCustomerPo from './components/AddCustomerPo'
+import Create from './components/create';
+import {BrowserRouter,Route, Routes} from 'react-router-dom'
+import Edit from './components/edit';
+import Delete from './components/delete';
+// import AddCustomerPo from './components/AddCustomerPo';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CustomizedDialogs>
+        <AddCustomerPo />
+      </CustomizedDialogs>
+
+      
+  
+     <BrowserRouter> 
+      <Routes>
+      
+        <Route path="/" element={<Create />} />
+      
+
+      
+       <Route path="/addcustomerpo" element={<AddCustomerPo />} />
+      
+     <Route path="/edit" element={<Edit />} />
+       <Route path="/delete" element={<Delete />} />
+      
+     </Routes>
+    </BrowserRouter>
     </div>
+    
   );
 }
 
